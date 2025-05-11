@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: SERVICE-REGISTRY
+  cloud:
+    config:
+      import: "optional:configserver:http://localhost:8888"
+server:
+  port: 8761
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,metrics,refresh,info"
